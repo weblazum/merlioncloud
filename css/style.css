@@ -1253,6 +1253,8 @@ div.rate-btn,
           box-shadow: 0 25px 35px -15px rgba(0, 0, 0, 0.2);
   -webkit-transition: visibility 0.2s, opacity 0.2s;
   transition: visibility 0.2s, opacity 0.2s;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 .header .sublist__link {
   display: block;
