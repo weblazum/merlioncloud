@@ -3197,6 +3197,9 @@ div.rate-btn,
   .not-found-page .header .nav__link {
     color: var(--color-black);
   }
+  .not-found-page .header .nav__link--drop:hover {
+    color: var(--color-black);
+  }
 }
 @media (max-width: 768px) {
   .not-found-page .not-found {
