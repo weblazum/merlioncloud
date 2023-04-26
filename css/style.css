@@ -220,7 +220,6 @@ textarea:focus,
 textarea:active,
 textarea:visited {
   outline: none;
-  border: none;
 }
 
 input[type=number]::-webkit-outer-spin-button,
