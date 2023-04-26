@@ -210,6 +210,10 @@ button:focus, button:active, button:visited {
   background: none;
 }
 
+svg {
+  -webkit-tap-highlight-color: transparent;
+}
+
 input,
 textarea {
   font-family: var(--font-family);
@@ -1722,7 +1726,7 @@ div.rate-btn,
 
 @media (max-width: 768px) {
   .popup-form__container {
-    padding: 60px 30px;
+    padding: 60px 16px;
   }
 
   .consultation-form {
@@ -1739,6 +1743,11 @@ div.rate-btn,
   }
   .consultation-form__policy {
     max-width: 460px;
+  }
+}
+@media (max-width: 360px) {
+  .popup-form__container {
+    padding: 60px 10px;
   }
 }
 .main-page {
@@ -2550,6 +2559,33 @@ div.rate-btn,
   padding: 8px 0 0;
   color: var(--color-dark-grey);
 }
+.dedicated-page .dedicated-configuration .owl-carousel .owl-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dedicated-page .dedicated-configuration .owl-carousel .owl-stage:after {
+  content: "";
+  display: none;
+}
+.dedicated-page .dedicated-configuration .owl-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.dedicated-page .dedicated-configuration .owl-theme .owl-nav.disabled + .owl-dots {
+  margin: 20px 0 0;
+}
+.dedicated-page .dedicated-configuration .owl-dot span {
+  background: var(--color-middle-grey) !important;
+}
+.dedicated-page .dedicated-configuration .owl-dot.active span {
+  background: var(--color-blue) !important;
+}
 
 .haas-page {
   background-image: url("../images/flower-big.svg");
@@ -2896,6 +2932,11 @@ div.rate-btn,
     background-position: right -1031px top -386px, right 5% top 718px;
   }
 }
+@media (max-width: 1080px) {
+  .dedicated-page .dedicated-configuration .owl-carousel .owl-stage {
+    gap: 0;
+  }
+}
 @media (max-width: 992px) {
   .cloud-page .cloud-benefits__list {
     -ms-grid-columns: 1fr;
@@ -3097,37 +3138,6 @@ div.rate-btn,
     background-image: none;
   }
 }
-.owl-carousel .owl-stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 24px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.owl-carousel .owl-stage:after {
-  content: "";
-  display: none;
-}
-
-.owl-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin: 20px 0 0;
-}
-
-.owl-dot span {
-  background: var(--color-middle-grey) !important;
-}
-.owl-dot.active span {
-  background: var(--color-blue) !important;
-}
-
 .not-found-page .header .nav__link {
   color: var(--color-white);
 }
