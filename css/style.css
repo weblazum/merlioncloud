@@ -3132,6 +3132,9 @@ div.rate-btn,
 .not-found-page .header .nav__link:hover {
   color: var(--color-blue);
 }
+.not-found-page .header .nav__link--drop:hover {
+  color: var(--color-white);
+}
 .not-found-page .header .burger svg {
   fill: var(--color-white);
 }
