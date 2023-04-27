@@ -163,7 +163,6 @@ img {
 a,
 .link {
   color: var(--color-blue);
-  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: color 0.2s, border 0.2s;
@@ -175,7 +174,6 @@ a:focus, a:active, a:visited,
 .link:active,
 .link:visited {
   outline: none;
-  border: none;
   background: none;
 }
 a:hover,
@@ -189,6 +187,7 @@ a:hover,
 img {
   border: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -210,10 +209,6 @@ button:focus, button:active, button:visited {
   background: none;
 }
 
-svg {
-  -webkit-tap-highlight-color: transparent;
-}
-
 input,
 textarea {
   font-family: var(--font-family);
@@ -224,6 +219,11 @@ textarea:focus,
 textarea:active,
 textarea:visited {
   outline: none;
+  border: none;
+}
+
+label {
+  -webkit-tap-highlight-color: transparent;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -914,6 +914,7 @@ div.rate-btn svg,
 }
 
 .social {
+  -webkit-tap-highlight-color: transparent;
   position: fixed;
   bottom: 40px;
   right: 3%;
@@ -925,7 +926,7 @@ div.rate-btn svg,
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  z-index: 6;
+  z-index: 4;
 }
 .social img {
   -webkit-transition: -webkit-transform 0.2s;
@@ -1164,6 +1165,7 @@ div.rate-btn,
 .header {
   position: relative;
   z-index: 5;
+  -webkit-tap-highlight-color: transparent;
 }
 .header .container {
   display: -webkit-box;
@@ -1298,7 +1300,7 @@ div.rate-btn,
     height: 100vh;
     z-index: 6;
     background-color: var(--color-white);
-    padding: 0 20px 0;
+    padding: 0 20px 20px 20px;
   }
   .header .nav--active {
     -webkit-transform: translateX(0);
@@ -1311,6 +1313,7 @@ div.rate-btn,
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 0;
+    margin: 0 0 50px 0;
   }
   .header .nav__item {
     width: 100%;
@@ -1695,6 +1698,20 @@ div.rate-btn,
 .popup-form input[type=submit] {
   display: none;
 }
+.popup-form .fancybox-close-small {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.popup-form .fancybox-close-small:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: var(--color-black);
+}
+.popup-form .fancybox-close-small svg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 .popup-form__input:not(:-moz-placeholder-shown) ~ .popup-form__label, .popup-form__textarea:not(:-moz-placeholder-shown) ~ .popup-form__label {
   top: -24px;
@@ -1717,16 +1734,9 @@ div.rate-btn,
   color: var(--color-dark-grey);
 }
 
-.fancybox-button svg {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: var(--color-black);
-}
-
 @media (max-width: 768px) {
   .popup-form__container {
-    padding: 60px 16px;
+    padding: 60px 30px;
   }
 
   .consultation-form {
@@ -1743,6 +1753,11 @@ div.rate-btn,
   }
   .consultation-form__policy {
     max-width: 460px;
+  }
+}
+@media (max-width: 567px) {
+  .popup-form__container {
+    padding: 60px 16px;
   }
 }
 @media (max-width: 360px) {
