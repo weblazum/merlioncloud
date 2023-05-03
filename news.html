@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge;IE=EmulateIE7;IE=EmulateIE8;IE=EmulateIE9;chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Новости | MerlionCloud</title>
     <meta name="description" content="Актуальные новости и пресс-релизы">
     <meta name="keywords" content="MerlionCloud">
@@ -21,8 +21,8 @@
     <header class="header">
       <div class="container header__container"><a class="header__logo" href="index.html"><img class="logo" src="images/logo.svg" alt="MerlionCloud лого"></a>
         <nav class="nav header__nav">
-          <button class="close-btn">
-            <svg>
+          <button class="close-btn" aria-label="Закрыть меню">
+            <svg aria-hidden="true">
               <use xlink:href="#close"></use>
             </svg>
           </button>
@@ -45,8 +45,8 @@
             </li>
           </ul>
         </nav>
-        <button class="burger" aria-hidden="true">
-          <svg>	
+        <button class="burger" aria-label="Открыть меню">
+          <svg aria-hidden="true">
             <use xlink:href="#burger"></use>
           </svg>
         </button>
@@ -136,7 +136,7 @@
              &copy;&nbsp; <span id="copyright-year"></span>, MerliONCloud Все&nbsp;права&nbsp;защищены</p>
         </div>
       </div>
-      <div class="social"><a><img src="images/whatsapp.svg" alt="whatsapp"></a><a><img src="images/telegram.svg" alt="telegram"></a></div>
+      <div class="social"><a href="#" aria-label="whatsapp"><img src="images/whatsapp.svg" alt="whatsapp"></a><a href="#" aria-label="telegram"><img src="images/telegram.svg" alt="telegram"></a></div>
     </footer><svg display="none">
 	<symbol width="32" height="8" viewBox="0 0 32 8" id="arrow">
 		<path
@@ -165,9 +165,9 @@
 		</path>
 	</symbol>
 </svg>
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
