@@ -247,32 +247,30 @@ input[type=number]:focus {
   background-color: #ddecfb;
 }
 
-.icon-arrow {
-  background: var(--color-black);
-  height: 1px;
-  width: 30px;
-  margin: 0 20px 0;
+.drop-arrow {
   position: relative;
-  cursor: pointer;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  height: 15px;
+  width: 15px;
 }
-.icon-arrow:before, .icon-arrow:after {
+.drop-arrow:after, .drop-arrow:before {
   content: "";
-  background: var(--color-black);
   position: absolute;
-  height: 1px;
-  width: 6px;
+  bottom: 0;
+  height: 100%;
+  background-color: var(--color-dark-grey);
+  width: 1.5px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
-.icon-arrow:before {
-  right: -1px;
-  bottom: -2px;
+.drop-arrow:after {
+  left: -5px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.icon-arrow:after {
-  right: -1px;
-  top: -2px;
+.drop-arrow:before {
+  left: 5px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -1232,7 +1230,7 @@ div.rate-btn,
 .header .nav__link--drop:hover {
   color: var(--color-black);
 }
-.header .nav__link--drop svg {
+.header .nav__link--drop .drop-arrow {
   display: none;
 }
 .header .sublist {
@@ -1344,26 +1342,31 @@ div.rate-btn,
         -ms-flex-align: center;
             align-items: center;
   }
-  .header .nav__link--drop svg {
+  .header .nav__link--drop .drop-arrow {
     display: block;
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
-    fill: var(--color-black);
-    margin: 0 10px 0 0;
+    margin: 0 5px 0 0;
   }
-  .header .nav__link--open svg {
+  .header .nav__link--open .drop-arrow:before, .header .nav__link--open .drop-arrow:after {
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
+  }
+  .header .nav__link--open .drop-arrow:before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .header .nav__link--open .drop-arrow:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   .header .sublist {
     display: none;

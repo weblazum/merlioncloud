@@ -29,10 +29,7 @@
           <ul class="nav__list">
             <li class="nav__item"><a class="nav__link" href="about.html">О компании</a>
             </li>
-            <li class="nav__item nav__item--drop"><a class="nav__link nav__link--drop">Услуги
-                <svg>	
-                  <use xlink:href="#down"></use>
-                </svg></a>
+            <li class="nav__item nav__item--drop"><a class="nav__link nav__link--drop">Услуги<span class="drop-arrow"></span></a>
               <ul class="nav__sublist sublist">
                 <li class="sublist__item"><a class="sublist__link" href="haas.html">Аренда оборудования HaaS	</a></li>
                 <li class="sublist__item"><a class="sublist__link" href="dedicated.html">Выделенные  серверы Dedicated	</a></li>
@@ -127,19 +124,19 @@
           <h2 class="consultation-form__title title">Консультация по&nbsp;вашему проекту</h2>
           <form class="consultation-form__inputs" method="post" action="" enctype="multipart/form-data">
             <fieldset class="consultation-form__group">
-              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__name" required>
+              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__name" autocomplete="off" required>
               <label class="consultation-form__label" for="consultation-form__name">Имя</label>
             </fieldset>
             <fieldset class="consultation-form__group">
-              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__email" required>
+              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__email" autocomplete="off" required>
               <label class="consultation-form__label" for="consultation-form__email">E-mail</label>
             </fieldset>
             <fieldset class="consultation-form__group">
-              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__company" required>
+              <input class="consultation-form__input" type="text" placeholder=" " id="consultation-form__company" autocomplete="off" required>
               <label class="consultation-form__label" for="consultation-form__company">Компания</label>
             </fieldset>
             <fieldset class="consultation-form__group">
-              <textarea class="consultation-form__textarea" placeholder=" " id="consultation-form__project"></textarea>
+              <textarea class="consultation-form__textarea" placeholder=" " id="consultation-form__project" autocomplete="off"></textarea>
               <label class="consultation-form__label" for="consultation-form__project">Описание проекта</label>
             </fieldset>
             <fieldset class="consultation-form__group">
