@@ -82,6 +82,7 @@ const copyrightYear = new Date().getFullYear();
 
 document.getElementById('copyright-year').innerHTML = copyrightYear;
 
+// яндекс карта
 let center = [55.814634403884206, 37.385702038717675];
 
 function getYaMap() {
