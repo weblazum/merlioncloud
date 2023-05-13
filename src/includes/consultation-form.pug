@@ -1,0 +1,23 @@
+section.consultation-form.background-scroll
+	.container
+		h2.consultation-form__title.title Консультация по&nbsp;вашему проекту
+		form(method='post' enctype='multipart/form-data' class="consultation-form__inputs")
+			fieldset.consultation-form__group
+				input.consultation-form__input(type="text", placeholder=" ", id="consultation-form__name", autocomplete="off" required)
+				label.consultation-form__label(for="consultation-form__name") Имя
+			fieldset.consultation-form__group
+				input.consultation-form__input(type="text", placeholder=" ", id="consultation-form__email", autocomplete="off" required)
+				label.consultation-form__label(for="consultation-form__email") E-mail
+			fieldset.consultation-form__group
+				input.consultation-form__input(type="text", placeholder=" ", id="consultation-form__company", autocomplete="off" required)
+				label.consultation-form__label(for="consultation-form__company") Компания
+			fieldset.consultation-form__group
+				textarea.consultation-form__textarea(placeholder=" ", id="consultation-form__project", autocomplete="off")
+				label.consultation-form__label(for="consultation-form__project") Описание проекта
+			fieldset.consultation-form__group
+				input(type="submit", id="consultation-form__submit", value="")
+				label(for="consultation-form__submit").consultation-form__button.submit-btn
+					| Отправить
+					svg(aria-hidden="true")
+						use(xlink:href="#arrow")
+		p.consultation-form__policy Нажимая кнопку, вы соглашаетесь с&nbsp;нашей <a>политикой обработки персональных данных</a>

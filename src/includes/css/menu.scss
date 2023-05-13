@@ -1,0 +1,244 @@
+.header {
+	position: relative;
+	z-index: 5;
+	-webkit-tap-highlight-color: transparent;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 60px;
+		position: initial;
+		min-height: 78px;
+	}
+	.logo {
+		padding: 10px 0;
+	}
+	.nav {
+		display: flex;
+		&__list {
+			display: flex;
+			gap: 35px;
+			max-width: 620px;
+			@media (max-width: 768px) {
+				flex-direction: column;
+			}
+		}
+		&__item {
+			max-width: 130px;
+			padding: 26px 0;
+			&--drop:hover {
+				.sublist {
+					visibility: visible;
+					opacity: 1;
+					transition: visibility 0.2s, opacity 0.2s;
+				}
+			}
+		}
+		&__link {
+			color: var(--color-black);
+			border-bottom: none;
+			white-space: nowrap;
+			&:hover {
+				text-decoration: none;
+				color: var(--color-blue);
+			}
+			&--active {
+				color: var(--color-blue);
+				cursor: default;
+			}
+			&--drop {
+				color: var(--color-black);
+				&:hover {
+					color: var(--color-black);
+				}
+				.drop-arrow {
+					display: none;
+				}
+			}
+		}
+	}
+	.sublist {
+		display: flex;
+		visibility: hidden;
+		opacity: 0;
+		width: 100%;
+		justify-content: center;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background-color: var(--color-white);
+		border-top: 1px solid var(--color-middle-grey);
+		z-index: 7;
+		flex-wrap: nowrap;
+		gap: 40px;
+		padding: 20px 0 40px;
+		box-shadow: 0 25px 35px -15px rgba(0, 0, 0, 0.2);
+		transition: visibility 0.2s, opacity 0.2s;
+		transform: translateY(-1px);
+		&__link {
+			display: block;
+			padding: 20px 20px;
+			max-width: 236px;
+			color: var(--color-black);
+			&:hover {
+				text-decoration: none;
+				color: var(--color-blue);
+			}
+			&--active {
+				color: var(--color-blue);
+				cursor: default;
+			}
+		}
+	}
+	.burger,
+	.close-btn {
+		display: none;
+	}
+	@media (max-width: 1080px) {
+		.nav {
+			flex-direction: column;
+			transform: translateX(150%);
+			transition: transform 0.5s;
+			overflow-y: auto;
+			position: fixed;
+			right: 0;
+			top: 0;
+			max-width: 460px;
+			width: 100%;
+			height: 100vh;
+			z-index: 6;
+			background-color: var(--color-white);
+			padding: 0 20px 20px 20px;
+			&--active {
+				transform: translateX(0);
+			}
+			&__list {
+				width: 100%;
+				flex-direction: column;
+				gap: 0;
+				margin: 0 0 50px 0;
+			}
+			&__item {
+				width: 100%;
+				align-items: flex-start;
+				max-width: 100%;
+				font-size: 22px;
+				font-weight: 500;
+				padding: 0;
+				&--drop {
+					color: var(--color-black);
+				}
+			}
+			&__link {
+				width: 100%;
+				display: block;
+				padding: 20px 0;
+				&--drop {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					.drop-arrow {
+						display: block;
+						width: 15px;
+						height: 15px;
+						flex-shrink: 0;
+						transition: transform 0.2s;
+						margin: 0 5px 0 0;
+					}
+				}
+				&--open {
+					.drop-arrow {
+						&:before,
+						&:after {
+							transition: transform 0.2s;
+						}
+						&:before {
+							transform: rotate(-45deg);
+						}
+						&:after {
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+		}
+		.sublist {
+			display: none;
+			padding: 0 10px;
+			visibility: visible;
+			opacity: 1;
+			position: initial;
+			flex-direction: column;
+			border-top: none;
+			gap: 0;
+			box-shadow: none;
+			&__item {
+				width: 100%;
+				padding: 0;
+				font-weight: 400;
+			}
+			&__link {
+				padding: 20px;
+				display: block;
+				max-width: 100%;
+			}
+			&__open {
+				display: block;
+			}
+		}
+		.burger {
+			display: block;
+			z-index: 5;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			position: relative;
+			padding: 10px;
+			svg {
+				width: 30px;
+				height: 18px;
+				fill: var(--color-dark-grey);
+			}
+		}
+		.close-btn {
+			display: inline-block;
+			z-index: 7;
+			width: fit-content;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			padding: 8px;
+			margin: 20px 0 0 auto;
+			svg {
+				width: 20px;
+				height: 20px;
+				stroke: var(--color-dark-grey);
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		.logo {
+			max-width: 234px;
+			width: 100%;
+		}
+		.nav {
+			padding: 0 20px;
+			&__item {
+				padding: 0;
+				font-size: 18px;
+			}
+			&__link {
+				padding: 14px 0;
+			}
+		}
+		.sublist {
+			padding: 0;
+			&__item {
+				font-size: 18px;
+			}
+			&__link {
+				padding: 14px 10px;
+			}
+		}
+	}
+}

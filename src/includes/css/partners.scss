@@ -1,0 +1,126 @@
+.partners-page {
+	background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+	background-position: right -998px top -406px, right 32% top 546px;
+	background-size: 1552px auto, 338px auto;
+	background-repeat: no-repeat;
+	.partners-top {
+		position: relative;
+		padding: 114px 0 108px;
+		&__text {
+			transform: translateY(0);
+		}
+		&__title {
+			max-width: 746px;
+			margin: 0 0 40px;
+		}
+		&__list {
+			max-width: 526px;
+		}
+	}
+	.partners-integrator {
+		padding: 100px 0 120px;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			gap: 60px;
+		}
+	}
+	&_column {
+		&:first-child {
+			flex: 0 1 55%;
+		}
+		&:last-child {
+			flex: 0 1 45%;
+		}
+	}
+	.partners-haas {
+		padding: 100px 0;
+	}
+	.partners-rent {
+		padding: 116px 0;
+		text-align: center;
+		&_text {
+			max-width: 980px;
+			margin: 0 auto;
+		}
+	}
+	.partners-become {
+		padding: 100px 0;
+		&__title {
+			margin: 0 0 60px;
+		}
+		&__list {
+			max-width: 636px;
+			margin: 0 0 60px;
+		}
+	}
+	@media (max-width: 1200px) {
+		background-position: right -998px top -406px, right 7% top 450px, right -135px bottom 130px;
+		.partners-banner {
+			&_text {
+				margin: 0 0 40px;
+			}
+			&_image {
+				display: block;
+				position: initial;
+				width: 100%;
+				transform: translateX(0);
+				margin: 0 auto;
+				max-width: 560px;
+				img {
+					transform: scale(1);
+				}
+			}
+		}
+		.partners-integrator {
+			.container {
+				flex-direction: column;
+			}
+			&_column {
+				&:first-child {
+					flex: 0 1 50%;
+				}
+				&:last-child {
+					flex: 0 1 50%;
+				}
+			}
+		}
+	}
+	@media (max-width: 992px) {
+	}
+	@media (max-width: 768px) {
+		background-image: none;
+		.partners-top {
+			padding: 50px 0 40px;
+		}
+		.partners-integrator {
+			padding: 60px 0 80px;
+			.container {
+				flex-direction: column;
+			}
+			&_column {
+				&:first-child {
+					flex: 0 1 50%;
+				}
+				&:last-child {
+					flex: 0 1 50%;
+				}
+			}
+		}
+		.partners-haas {
+			padding: 60px 0;
+		}
+		.partners-rent {
+			padding: 60px 0 80px;
+		}
+		.partners-become {
+			padding: 60px 0 50px;
+			&__title {
+				margin: 0 0 30px;
+			}
+			&__list {
+				margin: 0 0 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+extends includes/base
+
+block vars
+	-var pageName = 'partners-page'
+	-var pageTitle = "Партнерам | MerlionCloud"
+	-var pageDescription = "Партнерская программа MerlionCloud подойдет компаниям в сфере IT-консалтинга, аутсорсинга и системным интеграторам"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.partners-top.top-block
+				.partners-top__container.container
+					.partners-top__text.top-block__text
+						h1.partners-top__title.top-block__title.h2.title Партнерская программа<br>MerliOnCloud подойдет компаниям в&nbsp;сфере <nobr>IT-консалтинга</nobr>, аутсорсинга и&nbsp;системным интеграторам
+						ul.partners-top__list.checkbox-list 
+							li.partners-top__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Предоставляем инфраструктуру для&nbsp;бесплатного тестирования решений и&nbsp;пилотных проектов
+							li.partners-top__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Привлечение экспертов MerliOnCloud к&nbsp;участию в&nbsp;мероприятиях партнера
+							li.partners-top__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Демо-зона с&nbsp;готовыми решениями для&nbsp;тестирования
+					.partners-top__image.top-block__image
+						img(src="images/partners-banner.webp", alt="Партнерская программа", aria-hidden="true")
+			section.partners-integrator.background-gradient
+				.partners-integrator__container.container
+					.partners-integrator_column 	
+						h2.title Системным интеграторам
+						p.subtitle Концепция сотрудничества двух компаний: одна &mdash;&nbsp; производит товар или&nbsp;услугу, а&nbsp;вторая &mdash;&nbsp; продаёт их&nbsp;под собственным брендом
+						ul.standart-list
+							li.standart-list_item Быстрый запуск новой услуги, что&nbsp;повышает конкурентоспособность
+							li.standart-list_item Расширение целевой аудитории
+							li.standart-list_item Отсутствие расходов на&nbsp;запуск новой услуги
+							li.standart-list_item Дополнительная поддержка: команда pre-sale, архитекторов и&nbsp;service desk на&nbsp;нашей стороне
+							li.standart-list_item Гибкая ценовая политика, конечную розничную цену партнер формирует самостоятельно
+					.partners-integrator_column
+						h2.title Агентам
+						p.subtitle Сотрудничество двух компаний при&nbsp;которой вы разово получаете комиссию за&nbsp;привлечение клиента
+						ul.standart-list
+							li.standart-list_item Зарабатывайте до&nbsp;6% от&nbsp;стоимости оборудования
+							li.standart-list_item Рекомендуйте услугу MerliOnCloud и&nbsp;получайте вознаграждение за&nbsp;каждого клиента ежемесячно на&nbsp;протяжении оплаты данной услуги
+			section.partners-haas.features-block
+				.partners-haas__container.container
+					.partners-haas__header.features-block__header
+						.partners-haas__title.features-block__title
+							p Преимущества HaaS
+						.partners-haas__counter.features-block__counter(aria-hidden="true") 
+							| 01
+							span.dash 
+							| 03
+					ul.partners-haas__list.features-block__list
+						li.partners-haas__item.features-block__item
+							.partners-haas__name.features-block__name
+								h2 Снижение единовременных расходов
+							.partners-haas__description.features-block__description
+								| HaaS позволяет быстрее реализовывать проекты при&nbsp;переходе от&nbsp;капитального к&nbsp;операционному бюджету
+						li.partners-haas__item.features-block__item
+							.partners-haas__name.features-block__name
+								h2 Обновление и&nbsp;возможность выкупа
+							.partners-haas__description.features-block__description
+								| Возможность обновления текущего оборудования на&nbsp;новое при&nbsp;пролонгации договора или&nbsp;право выкупа оборудования в&nbsp;любой период действия договора
+						li.partners-haas__item.features-block__item
+							.partners-haas__name.features-block__name
+								h2 Отсутствие валютных рисков
+							.partners-haas__description.features-block__description
+								| Фиксированная цена контрактов в&nbsp;рублях
+			section.partners-rent.background-gradient
+				.partners-rent__container.container
+					h2.partners-rent_title.title Аренда выделенной инфраструктуры (HaaS) от&nbsp;MerliOnCloud
+					p.partners-rent_text.text Выделенная IT-инфраструктура от&nbsp;MerliOnCloud состоящая из&nbsp;СХД, серверного и&nbsp;сетевого оборудования, программного обеспечения и&nbsp;услуг технической поддержки
+			section.partners-become.background-scroll
+				.partners-become__container.container
+					h2.partners-become__title.title Как стать партнером
+					ol.partners-become__list.counter-list
+						li.counter-list__item.h3 Выберите партнерскую программу и&nbsp;отправьте заявку на&nbsp;участие
+						li.counter-list__item.h3 Обсудите детали с&nbsp;менеджером
+						li.counter-list__item.h3 Зарабатывайте на&nbsp;продаже услуг от&nbsp;MeriOnCloud
+					button.partners-become__button.btn(data-src="popup") 
+						| Стать партнером
+						svg(aria-hidden="true")
+							use(xlink:href="#arrow")
+			include includes/popup-form
+
+

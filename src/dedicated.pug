@@ -1,0 +1,156 @@
+extends includes/base
+
+block vars
+	-var pageName = 'dedicated-page'
+	-var pageTitle = "Аренда выделенного сервера с предоставлением доступа за 5 минут | MerlionCloud"
+	-var pageDescription = "Для проектов любой сложности, изолированность от других веб-ресурсов, самостоятельная настройка оборудования, стабильная работа"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.dedicated-top.top-block
+				.dedicated-top__container.container
+					.dedicated-top__text.top-block__text
+						h1.dedicated-top__title.top-block__title.h2.title Аренда выделенного сервера с&nbsp;предоставлением доступа за&nbsp;5 минут
+						ul.dedicated-top__list.top-block__list.checkbox-list
+							li.dedicated-top__item.top-block__item.checkbox-list__item
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Для проектов любой сложности
+							li.dedicated-top__item.top-block__item.checkbox-list__item
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Изолированность от&nbsp;других веб-ресурсов
+							li.dedicated-top__item.top-block__item.checkbox-list__item
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Самостоятельная настройка оборудования
+							li.dedicated-top__item.top-block__item.checkbox-list__item
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Стабильная работа
+						button.dedicated-top__button.btn(data-src="popup") 
+							| Заказать
+							svg(aria-hidden="true")
+								use(xlink:href="#arrow")
+					.dedicated-top__image.top-block__image
+						img(src="images/dedicated-image.webp", alt="Аренда выделенного сервера", aria-hidden="true")
+			section.dedicated-action.action-block.background-gradient
+				.dedicated-action__container.container 
+					h2.dedicated-action__title.action-block__title.title Предоставляем сервер на&nbsp;тест сроком до&nbsp;1&nbsp;недели
+					p.dedicated-action__subtitle.action-block__subtitle.h3 Поможем с&nbsp;миграцией ваших данных в&nbsp;облако
+					button.dedicated-action__button.action-block__button.transparent-btn(data-src="popup")
+						| Получить консультацию
+						svg(aria-hidden="true")
+							use(xlink:href="#arrow")
+			section.dedicated-configuration
+				.dedicated-configuration__container.container
+					.dedicated-configuration__section
+						h2.dedicated-configuration__title Готовые конфигурации
+						.dedicated-configuration__offers.owl-carousel.owl-theme
+							-
+								let readyConfigurations = [
+									{
+										name: 'Lenovo System x3650 M5',
+										cpu: '2xIntel E5-2698v4 (20 Core 2.2GHz)',
+										ram: '128 GB',
+										disc: '2x240GB SATA SSD/10x1.92GB SATA SSD/2x2TB 7.2k NLSAS',
+										speed: '1 Гб/с',
+										control: 'IPMI',
+										price: '35 270'
+									},
+									{
+										name: 'Lenovo System x3650 M5',
+										cpu: '2xIntel E5-2699v4 (22 Core 2.2GHz)',
+										ram: '512 GB',
+										disc: '6x1.92GB SATA SSD',
+										speed: '1 Гб/с',
+										control: 'IPMI',
+										price: '40 208'
+									}
+								];
+							each element in readyConfigurations
+								.dedicated-configuration__card
+									.dedicated-configuration__card-inner
+										h3.dedicated-configuration__card-title #{element.name}
+										ul.dedicated-configuration__card-list 	
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property CPU
+												.dedicated-configuration__card-value #{element.cpu}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property RAM
+												.dedicated-configuration__card-value #{element.ram}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Диски
+												.dedicated-configuration__card-value #{element.disc}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Интернет Канал
+												.dedicated-configuration__card-value #{element.speed}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Управление
+												.dedicated-configuration__card-value #{element.control}
+									.dedicated-configuration__card-inner
+										.dedicated-configuration__card-price
+											span.value #{element.price} 
+											span.currency руб/мес
+											p.vat.small-text с&nbsp;учетом НДС 20%
+										button.dedicated-configuration__card-button.btn(data-src="popup") 
+											| Заказать
+											svg(aria-hidden="true")
+												use(xlink:href="#arrow")
+					.dedicated-configuration__section
+						h2.dedicated-configuration__title Наборные конфигурации
+						.dedicated-configuration__offers.owl-carousel.owl-theme
+							-
+								let stackedConfigurations = [
+									{
+										name: 'SuperMicro 2U 6029P-TRT',
+										cpuAmount: 'до 2',
+										cpu: 'Intel серии Xeon Gold 62xx, Xeon Gold 52xx, Xeon Silver 42xx, Xeon Silver 41xx, Xeon Bronze 32xx',
+										ram: 'до 1024 GB',
+										disc: '8 х HDD SATA',
+										speed: '1 Гб/с',
+										control: 'IPMI',
+										price: '22 378'
+									},
+									{
+										name: 'SuperMicro 1U 6019P-WTR',
+										cpuAmount: 'до 2',
+										cpu: 'Intel серии Xeon Gold 62xx, Xeon Gold 52xx, Xeon Silver 42xx, Xeon Silver 41xx, Xeon Bronze 32xx',
+										ram: 'до 768 GB',
+										disc: '4 х HDD SATA',
+										speed: '1 Гб/с',
+										control: 'IPMI',
+										price: '21 577'
+									}
+								];
+							each element in stackedConfigurations
+								.dedicated-configuration__card
+									.dedicated-configuration__card-inner
+										h3.dedicated-configuration__card-title #{element.name}
+										ul.dedicated-configuration__card-list 	
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property CPU
+												.dedicated-configuration__card-value #{element.cpu}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property RAM
+												.dedicated-configuration__card-value #{element.ram}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Диски
+												.dedicated-configuration__card-value #{element.disc}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Интернет Канал
+												.dedicated-configuration__card-value #{element.speed}
+											li.dedicated-configuration__card-item 
+												.dedicated-configuration__card-property Управление
+												.dedicated-configuration__card-value #{element.control}
+									.dedicated-configuration__card-inner
+										.dedicated-configuration__card-price 	
+											span.value #{element.price} 
+											span.currency руб/мес
+											p.vat.small-text с&nbsp;учетом НДС 20%
+										button.dedicated-configuration__card-button.btn(data-src="popup") 
+											| Заказать
+											svg(aria-hidden="true")
+												use(xlink:href="#arrow")
+			include includes/consultation-form
+			include includes/popup-form

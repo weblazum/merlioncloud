@@ -1,0 +1,196 @@
+.main-page {
+	background-image: url("../images/flower-big.svg"), url("../images/flower.svg"), url("../images/flower.svg");
+	background-position: 1054px -386px, -182px 418px, right -8px top 1842px;
+	background-size: 2017px auto, 534px auto, 534px auto;
+	background-repeat: no-repeat;
+	.main-top {
+		padding: 100px 0 120px;
+		position: relative;
+		display: flex;
+		margin: 0 auto;
+		&::after {
+			content: "";
+			display: block;
+			background: url("../images/server.svg") top / 100% no-repeat;
+			width: 211px;
+			height: 380px;
+			position: absolute;
+			top: 529px;
+			left: 322px;
+			z-index: -1;
+		}
+		&__content {
+			max-width: 856px;
+			margin: 0 0 0 auto;
+		}
+		&__title {
+			margin: 0 0 57px;
+		}
+	}
+
+	.services {
+		position: relative;
+		padding: 130px 0 190px;
+		max-width: 1920px;
+		margin: 0 auto;
+		&:after {
+			content: "";
+			display: block;
+			width: 212px;
+			height: 570px;
+			background-image: url("https://static.merlion.ru/merlioncloud/img/server.svg");
+			background-size: 100%;
+			background-repeat: no-repeat;
+			position: absolute;
+			right: 9%;
+			top: 21%;
+		}
+		&__header {
+			display: flex;
+			margin: 0 0 80px;
+		}
+		&__title {
+			margin: 0 30px 0 0;
+		}
+		&__counter {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		&__list {
+			max-width: 990px;
+			display: flex;
+			flex-direction: column;
+			gap: 100px;
+		}
+		&__item {
+			display: flex;
+		}
+		&__name {
+			flex: 47%;
+			margin: 0 50px 15px 0;
+		}
+		&__description {
+			flex: 53%;
+		}
+	}
+
+	.sticker {
+		position: absolute;
+		bottom: -120px;
+		left: 7%;
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+		align-items: center;
+		width: 320px;
+		height: 320px;
+		background: url("../images/sticker.svg") 0 / 100% auto no-repeat;
+		color: var(--color-red);
+		text-align: center;
+		font-weight: 500;
+		z-index: 2;
+		@media (max-width: 1500px) {
+			left: 65%;
+		}
+		@media (max-width: 1200px) {
+			left: 55%;
+		}
+		@media (max-width: 768px) {
+			width: 220px;
+			height: 220px;
+			left: calc(50% - 110px);
+			bottom: -52%;
+		}
+	}
+
+	.separation {
+		background-image: url("../images/scroll-separating-block-background.webp");
+		background-position: 100% 100%;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-color: #dcecfb;
+		width: 100%;
+		height: 360px;
+	}
+	@media (max-width: 1500px) {
+		background-size: 1500px auto, 350px auto, 350px auto;
+		background-position: 840px -386px, -182px 418px, right -84px top 1849px;
+		.main-top {
+			&::after {
+				top: 575px;
+				left: 328px;
+			}
+			&__sticker {
+				left: 65%;
+			}
+		}
+		.services {
+			&:after {
+				display: none;
+			}
+		}
+	}
+	@media (max-width: 1200px) {
+		background-size: 1500px auto, 350px auto, 350px auto;
+		background-position: 640px -386px, -182px 418px, right -143px top 1992px;
+		.main-top {
+			&__sticker {
+				left: 55%;
+			}
+		}
+	}
+
+	@media (max-width: 992px) {
+		.main-top {
+			padding: 50px 0 80px;
+			&:after {
+				background-size: 80%;
+				top: 404px;
+				left: 414px;
+			}
+		}
+		.separation {
+			background-attachment: initial;
+		}
+		.services {
+			padding: 40px 0 100px;
+			&__header {
+				margin: 0 0 40px;
+			}
+			&__list {
+				gap: 40px;
+			}
+			&__item {
+				flex-direction: column;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		background-image: none;
+		.main-top {
+			&:after {
+				background-size: 65%;
+				top: 360px;
+				right: 50px;
+				left: auto;
+			}
+			&__sticker {
+				width: 220px;
+				height: 220px;
+				left: calc(50% - 110px);
+			}
+		}
+		.separation {
+			height: 230px;
+		}
+	}
+	@media (max-width: 576px) {
+		.main-top {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}

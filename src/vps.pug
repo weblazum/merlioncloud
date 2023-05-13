@@ -1,0 +1,162 @@
+extends includes/base
+
+block vars
+	-var pageName = 'vps-page'
+	-var pageTitle = "Облачные серверы для бизнеса | MerlionCloud"
+	-var pageDescription = "Быстрый старт, высокая производительность, удобная панель управления, поддержка, стабильная работа, простая оплата"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.vps-top.top-block
+				.vps-top__container.container
+					.vps-top__text.top-block__text
+						h1.vps-top__title.top-block__title.h2.title Облачные серверы для&nbsp;бизнеса
+						ul.vps-top__list.top-block__list.checkbox-list
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Быстрый старт
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Поддержка
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Высокая производительность
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Стабильная работа
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Удобная панель управления
+							li.vps-top__item.top-block__item.checkbox-list__item 
+								svg(aria-hidden="true")
+									use(xlink:href="#checkbox")
+								| Простая оплата
+					.vps-top__image.top-block__image
+						img(src="images/vps-image.webp", alt="Облачные серверы для бизнеса", aria-hidden="true")
+			section.vps-action.action-block.background-gradient
+				.vps-action__container.container 
+					h2.vps-action__title.action-block__title.title Наборный тариф
+					p.vps-action__subtitle.action-block__subtitle.h3 Соберите сервер нужной вам конфигурации под&nbsp;ваши задачи
+					button.vps-action__button.action-block__button.transparent-btn(data-src="popup") 
+						| Создать сервер
+						svg(aria-hidden="true")
+							use(xlink:href="#arrow")
+			section.vps-rates 	
+				.vps-rates__container.container
+					h2.vps-rates__title.title Фиксированные тарифы
+					-
+						let ratesList  = [
+							{
+								name: 'Старт',
+								ram: '0,5 GB', 
+								cpu: '2 CPU',
+								space: '7 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'50',
+							},
+							{
+								name: 'Минимальный',
+								ram: '0,5 GB',
+								cpu: '1 CPU',
+								space: '15 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'272.5',
+							},
+							{
+								name: 'Базовый',
+								ram: '1 GB',
+								cpu: '2 CPU',
+								space: '30 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'450',
+							},
+							{
+								name: 'Стандартный',
+								ram: '2 GB',
+								cpu: '4 CPU',
+								space: '60 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'805',
+							},
+							{
+								name: 'Оптимальный',
+								ram: '4 GB',
+								cpu: '6 CPU',
+								space: '100 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'2 242',
+							},
+							{
+								name: 'Расширенный',
+								ram: '8 GB',
+								cpu: '8 CPU',
+								space: '180 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'3 857',
+							},
+							{
+								name: 'Максимальный',
+								ram: '16 GB',
+								cpu: '12 CPU',
+								space: '320 GB',
+								speed: '100 мб/с',
+								control:'Бесплатно',
+								price:'6 897',
+							},
+						];
+					.vps-rates__table
+						.vps-rates__inner
+							table
+								thead
+									tr
+										th.headcol &nbsp;
+										each element in ratesList
+											th.rate_title #{element.name}
+								tbody
+									tr 
+										td.headcol Оперативная память (RAM)
+										each element in ratesList
+											td #{element.ram}
+									tr 
+										td.headcol Процессоры Intel 2,2ghz
+										each element in ratesList
+											td #{element.cpu}
+									tr 
+										td.headcol Дисковое пространство SSD
+										each element in ratesList
+											td #{element.space}
+									tr 
+										td.headcol Интернет Канал
+										each element in ratesList
+											td #{element.speed}
+									tr
+										td.headcol Панель управления
+										each element in ratesList
+											td #{element.control}
+									tr
+										td.headcol &nbsp;
+										each element in ratesList
+											td.rate_price
+												span.rate_price-value #{element.price} 
+												span.rate_price-currency руб/мес
+									tr
+										td.headcol &nbsp;
+										each element in ratesList
+											td 	
+												button.rate-btn(data-src="popup") 
+													| Заказать
+													svg(aria-hidden="true")
+														use(xlink:href="#arrow")
+			include includes/consultation-form
+			include includes/popup-form
