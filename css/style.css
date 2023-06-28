@@ -1,6 +1,8 @@
 @charset "UTF-8";
-@import "reset.css";
-@import "jquery.fancybox.css";
+@import "/merlioncloud/css/owl.carousel.min.css";
+@import "/merlioncloud/css/owl.theme.default.min.css";
+@import "/merlioncloud/css/reset.css";
+@import "/merlioncloud/css/jquery.fancybox.css";
 :root {
   --font-family: "TTNorms", Arial, sans-serif;
   --main-fontsize: 20px;
@@ -35,28 +37,28 @@
   font-display: swap;
   font-weight: 100;
   font-style: normal;
-  src: url("../fonts/Gilroy-Light.ttf") format("truetype"), url("../fonts/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy-Light.eot") format("embedded-opentype");
+  src: url("/merlioncloud/fonts/Gilroy-Light.ttf") format("truetype"), url("/merlioncloud/fonts/Gilroy-Light.woff") format("woff"), url("/merlioncloud/fonts/Gilroy-Light.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "TTNorms";
   font-display: swap;
   font-weight: 400;
   font-style: normal;
-  src: url("../fonts/TTNormsPro-Regular.ttf") format("truetype"), url("../fonts/TTNormsPro-Regular.woff") format("woff"), url("../fonts/TTNormsPro-Regular.eot") format("embedded-opentype"), url("../fonts/TTNormsPro-Regular.woff2") format("woff2");
+  src: url("/merlioncloud/fonts/TTNormsPro-Regular.ttf") format("truetype"), url("/merlioncloud/fonts/TTNormsPro-Regular.woff") format("woff"), url("/merlioncloud/fonts/TTNormsPro-Regular.eot") format("embedded-opentype"), url("/merlioncloud/fonts/TTNormsPro-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "TTNorms";
   font-display: swap;
   font-weight: 500;
   font-style: normal;
-  src: url("../fonts/TTNormsPro-Medium.ttf") format("truetype"), url("../fonts/TTNormsPro-Medium.woff") format("woff"), url("../fonts/TTNormsPro-Medium.eot") format("embedded-opentype"), url("../fonts/TTNormsPro-Medium.woff2") format("woff2");
+  src: url("/merlioncloud/fonts/TTNormsPro-Medium.ttf") format("truetype"), url("/merlioncloud/fonts/TTNormsPro-Medium.woff") format("woff"), url("/merlioncloud/fonts/TTNormsPro-Medium.eot") format("embedded-opentype"), url("/merlioncloud/fonts/TTNormsPro-Medium.woff2") format("woff2");
 }
 @font-face {
   font-family: "TTNorms";
   font-display: swap;
   font-weight: 700;
   font-style: normal;
-  src: url("../fonts/TTNormsPro-Bold.ttf") format("truetype"), url("../fonts/TTNormsPro-Bold.woff") format("woff"), url("../fonts/TTNormsPro-Bold.eot") format("embedded-opentype"), url("../fonts/TTNormsPro-Bold.woff2") format("woff2");
+  src: url("/merlioncloud/fonts/TTNormsPro-Bold.ttf") format("truetype"), url("/merlioncloud/fonts/TTNormsPro-Bold.woff") format("woff"), url("/merlioncloud/fonts/TTNormsPro-Bold.eot") format("embedded-opentype"), url("/merlioncloud/fonts/TTNormsPro-Bold.woff2") format("woff2");
 }
 *,
 *:before,
@@ -550,7 +552,7 @@ div.rate-btn svg,
 }
 
 .background-gradient {
-  background-image: url("../images/background-gradient.webp");
+  background-image: url("/merlioncloud/img/background-gradient.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -565,7 +567,7 @@ div.rate-btn svg,
 }
 
 .background-scroll {
-  background-image: url("../images/scroll-separating-block-background.webp");
+  background-image: url("/merlioncloud/img/scroll-separating-block-background.webp");
   background-position: right -180px top;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -1118,7 +1120,7 @@ div.rate-btn,
 }
 @media (max-width: 576px) {
   .background-gradient {
-    background-image: url("../images/background-gradient-vertical.webp");
+    background-image: url("/merlioncloud/img/background-gradient-vertical.webp");
     background-position: 100%;
   }
 
@@ -1161,6 +1163,24 @@ div.rate-btn,
     padding: 0 10px;
   }
 }
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 26px;
+  font-size: 15px;
+  color: var(--color-dark-grey);
+}
+.breadcrumb a {
+  color: var(--color-dark-grey);
+}
+.breadcrumb a:hover {
+  color: var(--color-blue);
+}
+
 .header {
   position: relative;
   z-index: 5;
@@ -1510,7 +1530,7 @@ div.rate-btn,
 @media (max-width: 768px) {
   .footer {
     padding: 30px 0 26px;
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-size: 338px auto;
     background-repeat: no-repeat;
     background-position: right -120px top 20px;
@@ -1741,6 +1761,26 @@ div.rate-btn,
   color: var(--color-dark-grey);
 }
 
+::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+::-moz-placeholder {
+  opacity: 0;
+}
+
+:-ms-input-placeholder {
+  opacity: 0;
+}
+
+::-ms-input-placeholder {
+  opacity: 0;
+}
+
+::placeholder {
+  opacity: 0;
+}
+
 @media (max-width: 768px) {
   .popup-form__container {
     padding: 60px 30px;
@@ -1772,8 +1812,25 @@ div.rate-btn,
     padding: 60px 10px;
   }
 }
+.js-validate-error-field {
+  border: none !important;
+  border-bottom: 1px solid var(--color-black) !important;
+  color: var(--color-black) !important;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  font-size: 16px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 .main-page {
-  background-image: url("../images/flower-big.svg"), url("../images/flower.svg"), url("../images/flower.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg"), url("/merlioncloud/img/flower.svg");
   background-position: 1054px -386px, -182px 418px, right -8px top 1842px;
   background-size: 2017px auto, 534px auto, 534px auto;
   background-repeat: no-repeat;
@@ -1789,7 +1846,7 @@ div.rate-btn,
 .main-page .main-top::after {
   content: "";
   display: block;
-  background: url("../images/server.svg") top/100% no-repeat;
+  background: url("/merlioncloud/img/server.svg") top/100% no-repeat;
   width: 211px;
   height: 380px;
   position: absolute;
@@ -1815,7 +1872,7 @@ div.rate-btn,
   display: block;
   width: 212px;
   height: 570px;
-  background-image: url("https://static.merlion.ru/merlioncloud/img/server.svg");
+  background-image: url("/merlioncloud/img/server.svg");
   background-size: 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -1883,7 +1940,7 @@ div.rate-btn,
           align-items: center;
   width: 320px;
   height: 320px;
-  background: url("../images/sticker.svg") 0/100% auto no-repeat;
+  background: url("/merlioncloud/img/sticker.svg") 0/100% auto no-repeat;
   color: var(--color-red);
   text-align: center;
   font-weight: 500;
@@ -1908,7 +1965,7 @@ div.rate-btn,
   }
 }
 .main-page .separation {
-  background-image: url("../images/scroll-separating-block-background.webp");
+  background-image: url("/merlioncloud/img/scroll-separating-block-background.webp");
   background-position: 100% 100%;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -2045,7 +2102,7 @@ div.rate-btn,
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/flower-big-white.svg");
+  background-image: url("/merlioncloud/img/flower-big-white.svg");
   background-position: 114% 50%;
   background-size: 50% 125%;
   background-repeat: no-repeat;
@@ -2066,7 +2123,7 @@ div.rate-btn,
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/flower-white.svg"), url("../images/flower-white.svg");
+  background-image: url("/merlioncloud/img/flower-white.svg"), url("/merlioncloud/img/flower-white.svg");
   background-position: 79% -49px, 79% calc(100% + 188px);
   background-size: 448px auto, 448px auto;
   background-repeat: no-repeat, no-repeat;
@@ -2159,7 +2216,7 @@ div.rate-btn,
 
 .news-page,
 .news-item-page {
-  background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
   background-position: right -1445px top -621px, right 118px top 569px;
   background-size: 2017px auto, 338px auto;
   background-repeat: no-repeat;
@@ -2167,7 +2224,7 @@ div.rate-btn,
 @media (max-width: 1200px) {
   .news-page,
 .news-item-page {
-    background-image: url("../images/flower-big.svg");
+    background-image: url("/merlioncloud/img/flower-big.svg");
     background-position: right -1765px top -621px;
     background-size: 2017px auto;
   }
@@ -2175,7 +2232,7 @@ div.rate-btn,
 @media (max-width: 768px) {
   .news-page,
 .news-item-page {
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-position: right -35px top 90px;
     background-size: 134px auto;
   }
@@ -2221,7 +2278,7 @@ div.rate-btn,
 .news-item-page .news-item {
   padding: 60px 0 200px;
 }
-.news-item-page .news-item .container {
+.news-item-page .news-item__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2230,7 +2287,7 @@ div.rate-btn,
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.news-item-page .news-item__wrapper {
+.news-item-page .news-item__inner {
   max-width: 856px;
 }
 .news-item-page .news-item__title {
@@ -2270,7 +2327,7 @@ div.rate-btn,
   margin: 0 0 10px;
 }
 @media (max-width: 1200px) {
-  .news-item-page .news-item .container {
+  .news-item-page .news-item__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2296,7 +2353,7 @@ div.rate-btn,
 }
 
 .partners-page {
-  background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
   background-position: right -998px top -406px, right 32% top 546px;
   background-size: 1552px auto, 338px auto;
   background-repeat: no-repeat;
@@ -2440,7 +2497,7 @@ div.rate-btn,
 }
 
 .dedicated-page .dedicated-top {
-  background-image: url("../images/server-dedicated.svg");
+  background-image: url("/merlioncloud/img/server-dedicated.svg");
   background-size: 248px auto;
   background-repeat: no-repeat;
   background-position: right 56% bottom -238px;
@@ -2473,7 +2530,7 @@ div.rate-btn,
   margin: 0 0 40px;
 }
 .dedicated-page .dedicated-configuration {
-  background-image: url("../images/flower.svg"), url("../images/flower-big.svg"), url("../images/flower-big.svg");
+  background-image: url("/merlioncloud/img/flower.svg"), url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower-big.svg");
   background-size: 534px auto, 2017px auto, 2017px auto;
   background-repeat: no-repeat;
   background-position: left -10% top 242px, right -1180px top -340px, left -808px bottom -1320px;
@@ -2605,7 +2662,7 @@ div.rate-btn,
 }
 
 .haas-page {
-  background-image: url("../images/flower-big.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg");
   background-size: 1556px auto;
   background-repeat: no-repeat;
   background-position: left -1160px top 17%;
@@ -2640,7 +2697,7 @@ div.rate-btn,
 }
 .haas-page .haas-tasks {
   padding: 80px 0 100px;
-  background-image: url("../images/abstract.png");
+  background-image: url("/merlioncloud/img/abstract.png");
   background-size: 608px auto;
   background-position: right -60px top -240px;
   background-repeat: no-repeat;
@@ -2731,7 +2788,7 @@ div.rate-btn,
 }
 
 .vps-page {
-  background-image: url("../images/flower-big.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg");
   background-size: 1556px auto;
   background-repeat: no-repeat;
   background-position: right -1031px top -386px;
@@ -2825,7 +2882,7 @@ div.rate-btn,
 }
 
 .cloud-page {
-  background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+  background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
   background-position: left -1162px top 596px, left 45% top 564px;
   background-size: 1552px auto, 338px auto;
   background-repeat: no-repeat;
@@ -2843,7 +2900,7 @@ div.rate-btn,
 }
 .cloud-page .cloud-features {
   padding: 80px 0 100px;
-  background-image: url("../images/bagel.png");
+  background-image: url("/merlioncloud/img/bagel.png");
   background-position: calc(100% + 109px) -225px;
   background-size: 737px auto;
   background-repeat: no-repeat;
@@ -2888,7 +2945,7 @@ div.rate-btn,
 }
 @media (max-width: 1200px) {
   .cloud-page {
-    background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
     background-position: left -1162px top 596px, right 4% top 746px;
   }
   .cloud-page .cloud-benefits__list {
@@ -2898,7 +2955,7 @@ div.rate-btn,
   }
 
   .dedicated-page {
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-position: right -84px top 950px;
     background-size: 338px auto;
     background-repeat: no-repeat;
@@ -2916,7 +2973,7 @@ div.rate-btn,
   }
 
   .haas-page {
-    background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
     background-size: 1556px auto, 338px auto;
     background-position: left -1160px top 17%, right 5% top 790px;
   }
@@ -2943,7 +3000,7 @@ div.rate-btn,
   }
 
   .vps-page {
-    background-image: url("../images/flower-big.svg"), url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower.svg");
     background-size: 1556px auto, 338px auto;
     background-repeat: no-repeat;
     background-position: right -1031px top -386px, right 5% top 718px;
@@ -2962,7 +3019,7 @@ div.rate-btn,
   }
 
   .dedicated-page .dedicated-configuration {
-    background-image: none, url("../images/flower-big.svg"), url("../images/flower-big.svg");
+    background-image: none, url("/merlioncloud/img/flower-big.svg"), url("/merlioncloud/img/flower-big.svg");
   }
 }
 @media (max-width: 768px) {
@@ -3030,7 +3087,7 @@ div.rate-btn,
   }
 
   .haas-page {
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-position: right -90px top 646px;
     background-size: 338px auto;
   }
@@ -3078,7 +3135,7 @@ div.rate-btn,
   }
 
   .vps-page {
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-size: 338px auto;
     background-repeat: no-repeat;
     background-position: right -100px top 649px;
@@ -3129,7 +3186,7 @@ div.rate-btn,
   }
 
   .cloud-page {
-    background-image: url("../images/flower.svg");
+    background-image: url("/merlioncloud/img/flower.svg");
     background-position: right -90px top 520px;
     background-size: 338px auto;
   }
@@ -3168,7 +3225,7 @@ div.rate-btn,
   fill: var(--color-white);
 }
 .not-found-page .not-found {
-  background-image: url("../images/background-page.webp");
+  background-image: url("/merlioncloud/img/background-page.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
