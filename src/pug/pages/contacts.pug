@@ -1,0 +1,17 @@
+extends ../base
+
+block vars
+	-var pageName = 'contacts-page'
+	-var pageTitle = "Контакты | MerlionCloud"
+	-var pageDescription = "Адрес, телефон, электронная почта"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.contacts
+				.contacts__container.container
+					h1.contacts__title.h2 Контакты
+					.contacts__info
+						a.contacts__phone(href="tel:+78005115122") 8-800-511-51-22
+						a.contacts__email(href="mailto:support@merlioncloud.ru") support@merlioncloud.ru
+						span.contacts__address «Кубик», блок&nbsp;«Б», бульвар&nbsp;Строителей, д.&nbsp;4, г.&nbsp;Красногорск, 143401, Россия
+					.contacts__map#map

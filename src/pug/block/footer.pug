@@ -1,0 +1,39 @@
+footer.footer
+	.footer__container.container
+			a.footer__logo(href="/merlioncloud/")
+				img.logo(src="/merlioncloud/img/logo.svg", alt="MerlionCloud лого")
+			nav.nav.footer__nav
+				ul.nav__list
+					li.nav__item
+						if pageName === "about-page"
+							a.nav__link.nav__link--active О компании
+						else
+							a.nav__link(href=linkAbout) О компании
+					li.nav__item
+						if pageName === "haas-page" || pageName === "cloud-page" || pageName === "vps-page" || pageName === "dedicated-page"
+							a.nav__link.nav__link--active Услуги
+						else
+							a.nav__link(href=linkVps) Услуги
+					li.nav__item
+						if pageName === "news-page" || pageName === "news-item-page"
+							a.nav__link.nav__link--active Новости
+						else
+							a.nav__link(href=linkNews) Новости
+					li.nav__item
+						if pageName === "partners-page"
+							a.nav__link.nav__link--active Партнерам
+						else
+							a.nav__link(href=linkPartners) Партнерам
+					li.nav__item
+						if pageName === "contacts-page"
+							a.nav__link.nav__link--active Контакты
+						else
+							a.nav__link(href=linkContacts) Контакты
+			#copyright
+				p.small-text 
+					| &copy;&nbsp; <span id="copyright-year"></span>, MerliONCloud Все&nbsp;права&nbsp;защищены
+	.social
+		a(aria-label="whatsapp")
+			img(src="/merlioncloud/img/whatsapp.svg" alt="whatsapp")
+		a(aria-label="telegram")
+			img(src="/merlioncloud/img/telegram.svg" alt="telegram")

@@ -97,7 +97,7 @@ function getYaMap() {
         balloonContentFooter: '<a href="tel:+78005115122">8-800-511-51-22</a><br><a href="mailto:support@merlioncloud.ru">support@merlioncloud.ru</a>'
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'images/placemark.svg',
+        iconImageHref: 'img/placemark.svg',
         iconImageSize: [45, 45],
         iconImageOffset: [-19, -24]
     });
@@ -109,4 +109,85 @@ function getYaMap() {
     map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
     map.controls.remove('rulerControl'); // удаляем контрол правил
     map.geoObjects.add(placemark);
+}
+
+if (document.querySelector('.form') !== null) {
+    // inputmask
+    const consultationForm = document.querySelector('.consultation-form');
+    const inputMask = new Inputmask('+7 (999) 999-99-99');
+
+    if (document.querySelector('.popup-form') !== null) {
+        const popupForm = document.querySelector('.popup-form');
+        const telSelector = popupForm.querySelector('input[type="tel"]');
+        inputMask.mask(telSelector);
+    }
+
+    // just-validate
+    if (document.querySelector('.consultation-form') !== null) {
+        new window.JustValidate('.consultation-form', {
+            rules: {
+                company: {
+                    required: true,
+                },
+                task: {
+                    required: true,
+                },
+            },
+            colorWrong: 'var(--color-red)',
+            messages: {
+                name: {
+                    required: 'Введите имя',
+                    minLength: 'Имя не должно быть меньше 3 символов',
+                    maxLength: 'Имя не должно содержать более 15 символов'
+                },
+                email: {
+                    email: 'Введите корректный E-mail',
+                    required: 'Введите E-mail'
+                },
+                company: {
+                    required: 'Введите название компании'
+                },
+                task: {
+                    required: 'Опишите проект'
+                }
+            },
+            submitHandler: function (thisForm) {
+
+            }
+        })
+    }
+
+    if (document.querySelector('.popup-form') !== null) {
+        new window.JustValidate('.popup-form', {
+            rules: {
+                tel: {
+                    required: true,
+                    function: () => {
+                        // передаем чистое значение ввода
+                        const phone = telSelector.inputmask.unmaskedvalue();
+                        return Number(phone) && phone.length === 10;
+                    }
+                },
+            },
+            colorWrong: 'var(--color-red)',
+            messages: {
+                name: {
+                    required: 'Введите имя',
+                    minLength: 'Имя не должно быть меньше 3 символов',
+                    maxLength: 'Имя не должно содержать более 15 символов'
+                },
+                email: {
+                    email: 'Введите корректный E-mail',
+                    required: 'Введите E-mail'
+                },
+                tel: {
+                    required: 'Введите телефон',
+                    function: 'Введите корректный телефон'
+                },
+            },
+            submitHandler: function (thisForm) {
+
+            }
+        })
+    }
 }

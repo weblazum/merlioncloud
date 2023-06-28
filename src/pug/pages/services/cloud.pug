@@ -1,0 +1,70 @@
+extends ../../base
+
+block vars
+	-var pageName = 'cloud-page'
+	-var pageTitle = "Аренда виртуальной инфраструктуры на OpenStack или VMWare | MerlionCloud"
+	-var pageDescription = "Облако OpenStack или VMWare дает возможность установки почти всех известных ОС. Не тратьте ресурсы на устаревшие технологии и их поддержание"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.cloud-top.top-block
+				.cloud-top__container.container
+					.cloud-top__text.top-block__text
+						h1.cloud-top__title.top-block__title.h2.title Аренда виртуальной инфраструктуры на&nbsp;OpenStack или&nbsp;VMWare
+						p.cloud-top__description.top-block__description Облако OpenStack или&nbsp;VMWare дает возможность установки почти всех известных ОС
+					.cloud-top__image.top-block__image
+						img(src="/merlioncloud/img/cloud-image.webp", alt="Аренда виртуальной инфраструктуры", aria-hidden="true")
+			section.cloud-action.background-gradient
+				.cloud-action__container.container
+					h2.cloud-action__title Не тратьте ресурсы на&nbsp;устаревшие технологии и&nbsp;их&nbsp;поддержание
+					button.cloud-action__button.transparent-btn(data-src="popup") 
+						| Получить консультацию
+						svg(aria-hidden="true")
+							use(xlink:href="#arrow")
+			section.cloud-features.features-block
+				.cloud-features__container.container
+					.cloud-features__header.features-block__header
+						.cloud-features__title.features-block__title
+							p Возможности
+						.cloud-features__counter.features-block__counter(aria-hidden="true") 
+							| 01
+							span.dash 
+							| 04
+					ul.cloud-features__list.features-block__list
+						li.cloud-features__item.features-block__item
+							.cloud-features__name.features-block__name
+								h2 Объектное хранилище
+							.cloud-features__description.features-block__description
+								| Подключайте безопасную, надежную и&nbsp;масштабируемую систему объектного хранилища, совместимую с&nbsp;S3
+						li.cloud-features__item.features-block__item
+							.cloud-features__name.features-block__name
+								h2 Резервное копирование
+							.cloud-features__description.features-block__description
+								| Создание резервных копий любых элементов вашей IT-инфраструктуры с&nbsp;использованием сервисов резервного копирования
+						li.cloud-features__item.features-block__item
+							.cloud-features__name.features-block__name
+								h2 Кластеры Kubernetes
+							.cloud-features__description.features-block__description
+								| Создание готового к&nbsp;работе кластера Kubernetes в&nbsp;несколько кликов.
+						li.cloud-features__item.features-block__item
+							.cloud-features__name.features-block__name
+								h2 Полное управление инфраструктурой
+							.cloud-features__description.features-block__description
+								| Создание и&nbsp;клонирование, установка ОС, изменение конфигурации, управление сетевыми конфигурациями, включение и&nbsp;отключение, публикация в&nbsp;интернете приложения
+			section.cloud-benefits.background-gradient
+				.cloud-benefits__container.container
+					h2.cloud-benefits__title.title Преимущества услуги
+					ul.cloud-benefits__list.list
+						li.list__item Мощные физические серверы расположены в&nbsp;дата-центрах с&nbsp;уровнем надежности TIER III
+						li.list__item Предоставление и&nbsp;учёт внутренних ИТ-сервисов
+						li.list__item Высокая производительность и&nbsp;надежность
+						li.list__item Производительные сервера на&nbsp;базе процессоров Intel Xeon
+						li.list__item Эффективное управление различными гипервизорами KVM (OpenStack), ESXi (VMware)
+						li.list__item Биллинг ресурсов и&nbsp;сервисов
+						li.list__item Высокий аптайм &mdash;&nbsp; показатель времени непрерывной работы
+						li.list__item Способность выдержать большие нагрузки
+						li.list__item Полное управление собственной инфраструктурой
+						li.list__item Снижение затрат
+						li.list__item Техническая поддержка 24/7
+			include ../../block/consultation-form
+			include ../../block/popup-form

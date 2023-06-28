@@ -1,0 +1,33 @@
+doctype html
+html(lang='ru')
+	block vars
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		title=pageTitle
+		meta(name='description' content=pageDescription)
+		meta(name='keywords' content=pageKeywords)
+		meta(property='og:title' content=pageTitle)
+		meta(property='og:description' content=pageDescription)
+		meta(property='og:image' content='img/cover_project.jpg')
+		meta(name='robots' content='noindex, nofollow')
+		link(rel='shortcut icon' type='image/png' href='/merlioncloud/img/favicon.ico')
+		link(rel='stylesheet' type='text/css' href='/merlioncloud/css/style.css')
+	body(class=pageName)
+		.overlay
+		include block/header
+		block content
+		include block/footer
+		include ../html/icons.html
+		block scripts
+			script(src='/merlioncloud/libs/jquery-3.5.1.min.js')
+			script(src='/merlioncloud/libs/jquery.fancybox.min.js')
+			script(src='/merlioncloud/libs/just-validate.min.js')
+			script(src='/merlioncloud/libs/inputmask.min.js')
+			script(src='/merlioncloud/libs/owl.carousel.min.js')
+			if pageName === "contacts-page"
+				script(async src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&scroll=false&onload=getYaMap")
+			else
+
+			script(src='/merlioncloud/js/main.js')

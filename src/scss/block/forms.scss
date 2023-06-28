@@ -1,0 +1,214 @@
+.consultation-form {
+	position: relative;
+	z-index: 1;
+	padding: 100px 0 80px;
+	&__title {
+		margin: 0 0 70px;
+	}
+	&__group {
+		position: relative;
+		margin: 0 0 60px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+		padding: 20px 0 0;
+		max-width: 638px;
+	}
+	&__label {
+		position: absolute;
+		top: -10px;
+		left: 0;
+		z-index: 1;
+		transition: top 0.3s, color 0.3s, font-size 0.3s;
+	}
+	&__input {
+		width: 100%;
+		padding: 0 0 10px;
+		border-bottom: 1px solid var(--color-black);
+		background-color: transparent;
+		outline: none;
+		&:focus {
+			border-bottom: 1px solid var(--color-black);
+		}
+	}
+	&__textarea,
+	textarea {
+		width: 100%;
+		padding: 0 0 10px;
+		border-bottom: 1px solid var(--color-black);
+		background-color: transparent;
+		outline: none;
+		transition: 0.3s;
+		max-height: 180px;
+		height: 35px;
+		min-height: 35px;
+		overflow: hidden;
+		&:focus {
+			border-bottom: 1px solid var(--color-black);
+		}
+	}
+	input[type="submit"] {
+		display: none;
+	}
+	&__button {
+		margin: 0 0 30px;
+	}
+	::selection {
+		background: var(--color-middle-grey);
+	}
+	&__policy {
+		max-width: 638px;
+		a:hover {
+			border-bottom: 2px solid var(--color-blue);
+		}
+	}
+}
+
+.consultation-form__input:focus ~ .consultation-form__label,
+.consultation-form__input:not(:placeholder-shown) ~ .consultation-form__label,
+.consultation-form__textarea:focus ~ .consultation-form__label,
+.consultation-form__textarea:not(:placeholder-shown) ~ .consultation-form__label {
+	top: -24px;
+	font-size: 14px;
+	color: var(--color-dark-grey);
+}
+.popup-form {
+	display: none;
+	flex-direction: column;
+	padding: 0;
+	background-color: var(--color-white);
+	&__container {
+		max-width: 838px;
+		margin: 0 auto;
+		padding: 60px 100px;
+	}
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+		padding: 22px 0 0;
+		margin: 0 0 40px;
+	}
+	&__title {
+		margin: 0 0 20px;
+	}
+	&__text {
+		margin: 0 0 40px;
+	}
+	&__group {
+		position: relative;
+		max-width: 638px;
+	}
+	&__label {
+		position: absolute;
+		top: -10px;
+		left: 0;
+		z-index: 1;
+		transition: top 0.3s, color 0.3s, font-size 0.3s;
+	}
+	&__input {
+		width: 100%;
+		padding: 0 0 10px;
+		border-bottom: 1px solid var(--color-black);
+		background-color: transparent;
+		outline: none;
+		&:focus {
+			border-bottom: 1px solid var(--color-black);
+		}
+	}
+	&__policy {
+		a:hover {
+			border-bottom: 2px solid var(--color-blue);
+		}
+	}
+	&__textarea,
+	textarea {
+		max-height: 180px;
+		height: 35px;
+		min-height: 35px;
+	}
+	input[type="submit"] {
+		display: none;
+	}
+	.fancybox-close-small {
+		transition: 0.2s;
+		&:hover {
+			transition: 0.2s;
+			color: var(--color-black);
+		}
+		svg {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	}
+}
+.popup-form__input:focus ~ .popup-form__label,
+.popup-form__input:not(:placeholder-shown) ~ .popup-form__label,
+.popup-form__textarea:focus ~ .popup-form__label,
+.popup-form__textarea:not(:placeholder-shown) ~ .popup-form__label {
+	top: -24px;
+	font-size: 14px;
+	color: var(--color-dark-grey);
+}
+
+::placeholder {
+	opacity: 0;
+}
+
+@media (max-width: 768px) {
+	.popup-form {
+		&__container {
+			padding: 60px 30px;
+		}
+	}
+	.consultation-form {
+		padding: 60px 0;
+		&__title {
+			margin: 0 0 40px;
+		}
+		&__group {
+			margin: 0 0 70px;
+			&:nth-child(4) {
+				margin: 0 0 50px;
+			}
+		}
+		&__policy {
+			max-width: 460px;
+		}
+	}
+}
+
+@media (max-width: 567px) {
+	.popup-form {
+		&__container {
+			padding: 60px 16px;
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.popup-form {
+		&__container {
+			padding: 60px 10px;
+		}
+	}
+}
+
+.js-validate-error-field {
+	border: none !important;
+	border-bottom: 1px solid var(--color-black) !important;
+	color: var(--color-black) !important;
+	transition: 0.2s;
+}
+.js-validate-error-label {
+	position: absolute;
+	top: 38px;
+	left: 0;
+	font-size: 16px;
+	transition: 0.2s;
+}

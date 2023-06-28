@@ -1,0 +1,36 @@
+extends ../base
+
+block vars
+	-var pageName = 'news-page'
+	-var pageTitle = "Новости | MerlionCloud"
+	-var pageDescription = "Актуальные новости и пресс-релизы"
+	-var pageKeywords = 'MerlionCloud'
+block content
+		main.main
+			section.news-main
+				.news-main__container.container
+					h1.news-main__title.h2 Новости
+					.news-main__list
+						include ../includes/news-list
+						each element in newsList
+							.news-main__item
+								.news-main__item-date #{element.date} 
+								.news-main__item-title
+									a.h3.title(href=element.url) #{element.title}
+								.news-main__item-announce
+									p #{element.announce}
+					//- .pages
+					//- 	button.pages-btn.pages-btn-prev
+					//- 		svg(aria-hidden="true")
+					//- 			use(xlink:href="#arrow-middle")
+					//- 		span Назад
+					//- 	.pages-field
+					//- 		button.pages-field__item 1
+					//- 		button.pages-field__item.pages-field__item--active 2
+					//- 		button.pages-field__item 3
+					//- 		.pages-field__points(aria-hidden="true")
+					//- 		button.pages-field__item 19
+					//- 	button.pages-btn.pages-btn-next 
+					//- 		span Вперед
+					//- 		svg(aria-hidden="true")
+					//- 			use(xlink:href="#arrow-middle")

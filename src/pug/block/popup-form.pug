@@ -1,0 +1,21 @@
+.popup-form#popup-form
+	.popup-form__container
+		h2.popup-form__title.title Получить консультацию
+		p.popup-form__text Спасибо за&nbsp;проявленный интерес к&nbsp;MerlionCloud. Мы свяжемся с&nbsp;вами в&nbsp;течении рабочего дня.
+		form.form(method='post' enctype='multipart/form-data' class="popup-form__inputs")
+			fieldset.popup-form__group
+				input.popup-form__input(type="text", placeholder=" ", data-validate-field="name", id="popup-form__name")
+				label.popup-form__label(for="popup-form__name") Имя
+			fieldset.popup-form__group
+				input.popup-form__input(type="email", placeholder=" ", data-validate-field="email", id="popup-form__email")
+				label.popup-form__label(for="popup-form__email") E-mail
+			fieldset.popup-form__group
+				input.popup-form__input(type="tel", placeholder=" ", data-validate-field="tel", id="popup-form__number", inputmode="text")
+				label.popup-form__label(for="popup-form__number") Мобильный телефон
+			fieldset.popup-form__group
+				input(type="submit" id="popup-form__submit" value="")
+				label(for="popup-form__submit").popup-form__btn.submit-btn
+					| Отправить заявку
+					svg(aria-hidden="true")
+						use(xlink:href="#arrow")
+		p.popup-form__policy Нажимая кнопку, вы соглашаетесь с&nbsp;нашей <a>политикой обработки персональных данных</a>.

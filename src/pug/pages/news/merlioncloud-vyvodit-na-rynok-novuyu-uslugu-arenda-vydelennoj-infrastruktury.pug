@@ -1,0 +1,57 @@
+extends ../../base
+
+block vars
+	-var pageName = 'news-item-page'
+	-var pageTitle = "MerliOnCloud выводит на рынок новую услугу — аренда выделенной инфраструктуры"
+	-var pageDescription = "Для партнеров MERLION серверное решение Bare Metal предполагает два варианта сотрудничества и полное сопровождение со стороны MerliOnCloud"
+	-var pageKeywords = 'MerlionCloud'
+	-var newsID = '001'
+block content
+		main.main
+			section.news-item
+				.news-item__container.container
+					.breadcrumb
+						span 	
+							a(href="/merlioncloud/") Главная 
+						span /
+						span 
+							a(href="/merlioncloud/news.html") Новости 
+						span /
+						span 
+							=pageTitle
+					.news-item__content
+						.news-item__inner
+							.news-item__title
+								h1.title.h2 MerliOnCloud выводит на&nbsp;рынок новую услугу &mdash;&nbsp;аренда выделенной инфраструктуры
+							.news-item__date 19 июля 2022
+							.news-item__announce 
+								p.h3 Для партнеров MERLION серверное решение Bare Metal предполагает два варианта сотрудничества и&nbsp;полное сопровождение со&nbsp;стороны MerliOnCloud.
+							.news-item__text.user-content
+								img(src="/merlioncloud/img/news-item-image-01.webp", alt="MerliOnCloud")
+								p MerliOnCloud сообщает о&nbsp;выводе на&nbsp;рынок услуги аренды выделенной инфраструктуры: Dedicated Infrastructure и&nbsp;HaaS.
+
+								p Услуги представляют собой сервис аренды для&nbsp;заказчиков любого комплексного решения ИТ-оборудования с&nbsp;помесячной оплатой и&nbsp;его обслуживанием. Всё сопровождение функционирования и&nbsp;поддержки инфраструктуры, включая установку ПО, обеспечивает команда инженеров MerliOnCloud. Состав оборудования и&nbsp;набор услуг определяется требованиями заказчика.
+
+								p Dedicated Infrastructure помогает компаниям разгрузить свои вычислительные мощности, резервировать базы данных и&nbsp;иметь возможность доступа к&nbsp;ним из любого места при&nbsp;проведении сервисных работ на&nbsp;одном из серверов, получить гарантированную сетевую безопасность за&nbsp;счёт ограничения прав доступа к&nbsp;серверу третьим лицам.
+
+								p Nакже среди факторов, почему компаниям иногда эффективней арендовать ИТ-инфраструктуру, чем разворачивать и&nbsp;поддерживать собственную, стоит отметить следующее:
+								ul
+									li Переход от&nbsp;Capex в&nbsp;Opex модель затрат. Открывается возможность производить оплаты из текущего денежного потока компании.
+									li Индивидуально спроектированная архитектура.
+
+									li Экономия на&nbsp;последующем апгрейде и&nbsp;ремонте в&nbsp;случае неполадок.
+
+									li Возможность изменения конфигурации сервера под&nbsp;любые нужды.
+
+									li Применение стратегии гибридного облака, когда определенные требования не позволяют использовать публичные облака.
+
+									li Нет необходимости обслуживать собственный ЦОД.
+								p Полное описание новой услуги Dedicated Infrastructure &mdash;&nbsp; на&nbsp;сайте MerliOnCloud <a href="/merlioncloud/">https://merlioncloud.ru/</a>
+						.news-sidebar
+							include ../../includes/news-list
+							each element in newsList.slice(0, 3)
+								if newsID !== element.id
+									.news-sidebar__item
+										.news-sidebar__date #{element.date} 
+										.news-sidebar__title
+											a.title(href=element.url) #{element.title}

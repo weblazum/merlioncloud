@@ -1,0 +1,74 @@
+-var linkAbout = '/merlioncloud/about.html', linkNews = '/merlioncloud/news.html'; linkPartners = '/merlioncloud/partners.html'; linkContacts = '/merlioncloud/contacts.html'; linkHaas = '/merlioncloud/services/haas.html'; linkDedicated = '/merlioncloud/services/dedicated.html'; linkVps = '/merlioncloud/services/vps.html'; linkCloud = '/merlioncloud/services/cloud.html';
+
+header.header
+	.container.header__container
+		a.header__logo(href="/merlioncloud/")
+			if pageName === "not-found-page"
+				img.logo(src="/merlioncloud/img/logo-white.svg", alt="MerlionCloud лого")
+			else 	
+				img.logo(src="/merlioncloud/img/logo.svg", alt="MerlionCloud лого")
+		nav.nav.header__nav
+			button(aria-label="Закрыть меню").close-btn
+				svg(aria-hidden="true")
+					use(xlink:href="#close")
+			ul.nav__list
+				li.nav__item
+					if pageName === "about-page" 
+						a.nav__link.nav__link--active О компании
+					else
+						a.nav__link(href=linkAbout) О компании
+				li.nav__item.nav__item--drop
+					if pageName === "haas-page" || pageName === "cloud-page" || pageName === "vps-page" || pageName === "dedicated-page"
+						a.nav__link.nav__link--drop Услуги
+							span.drop-arrow
+						ul.nav__sublist.sublist
+							li.sublist__item
+								if pageName === "haas-page"
+									a.sublist__link.sublist__link--active Аренда оборудования HaaS	
+								else
+									a.sublist__link(href=linkHaas) Аренда оборудования HaaS
+							li.sublist__item
+								if pageName === "dedicated-page"
+									a.sublist__link.sublist__link--active Выделенные серверы Dedicated	
+								else 
+									a.sublist__link(href=linkDedicated) Выделенные серверы Dedicated	
+							li.sublist__item
+								if pageName === "vps-page"
+									a.sublist__link.sublist__link--active Облачные серверы VPS/VDS
+								else 
+									a.sublist__link(href=linkVps) Облачные серверы VPS/VDS
+							li.sublist__item
+								if pageName === "cloud-page"
+									a.sublist__link.sublist__link--active Облако
+								else 
+									a.sublist__link(href=linkCloud) Облако
+					else
+						a.nav__link.nav__link--drop Услуги
+							span.drop-arrow
+						ul.nav__sublist.sublist
+							li.sublist__item
+								a.sublist__link(href=linkHaas) Аренда оборудования HaaS	
+							li.sublist__item
+								a.sublist__link(href=linkDedicated) Выделенные серверы Dedicated	
+							li.sublist__item
+								a.sublist__link(href=linkVps) Облачные серверы VPS/VDS
+							li.sublist__item
+								a.sublist__link(href=linkCloud) Облако
+				li.nav__item
+					if pageName === "news-page" || pageName === "news-item-page"
+						a.nav__link.nav__link--active Новости
+					else
+						a.nav__link(href=linkNews) Новости
+				li.nav__item
+					if pageName === "partners-page"
+						a.nav__link.nav__link--active Партнерам
+					else
+						a.nav__link(href=linkPartners) Партнерам
+				li.nav__item
+					if pageName === "contacts-page"
+						a.nav__link.nav__link--active Контакты
+					else
+						a.nav__link(href=linkContacts) Контакты
+		button.burger(aria-label="Открыть меню")
+			svg(aria-hidden="true")
+				use(xlink:href="#burger")
